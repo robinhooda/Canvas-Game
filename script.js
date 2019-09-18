@@ -7,7 +7,7 @@ let ballXSpeed=2;
 let ballYSpeed=-3;
 
 window.onload=function(){
-    setInterval(clearCanvas,100)
+    setInterval(clearCanvas,10)
 }
 
 function drawBall() {
@@ -22,7 +22,16 @@ function drawBall() {
 function clearCanvas(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
+    
     ballXPosition=ballXPosition+ballXSpeed;
+    if((ballXPosition>canvas.width)||(ballXPosition<0)){
+        ballXSpeed=-ballXSpeed
+    }
+
     ballYPosition=ballYPosition+ballYSpeed;
+    if((ballYPosition>canvas.height)||(ballYPosition<0)){
+        ballYSpeed=-ballYSpeed
+    }
+    
 }
 
