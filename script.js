@@ -1,6 +1,10 @@
 let canvas;
 let canvasContext;
 let ballRadius=10;
+let ballXPosition=400;
+let ballYPosition=470;
+let ballXSpeed=20;
+let ballYSpeed=4;
 
 window.onload=function () {
     canvas=document.getElementById('game');
@@ -10,29 +14,27 @@ window.onload=function () {
     
     
     setInterval(() => {
+        ballMovement();
         drawBall();
 
+
         
-    }, 1000);  
+    }, 100);  
+}
+
+
+
+function ballMovement(){
+    ballXPosition=ballXPosition+ballXSpeed;
+    ballYPosition=ballYPosition+ballYSpeed;
+
+
 }
 
 function drawBall() {
-    // canvasContext.beginPath();
-    // canvasContext.arc(0,0,ballRadius,0,2 * Math.PI);
-    // canvasContext.fillStyle='#ffffff';
-    // canvasContext.closePath();
-    // console.log("hey");
-    
-canvas = document.getElementById("game");
-canvasContext = canvas.getContext("2d");
-
-// canvasContext.beginPath();
-canvasContext.fillStyle='#ffffff';
-canvasContext.arc(canvas.width/2, canvas.height-30, ballRadius, 0, 2 * Math.PI);
-canvasContext.stroke();
-
-canvasContext.fill();
-// canvasContext.closePath();
-
-
+    canvas = document.getElementById("game");
+    canvasContext = canvas.getContext("2d");
+    canvasContext.fillStyle='#ffffff';
+    canvasContext.arc(ballXPosition,ballYPosition, ballRadius, 0, 2 * Math.PI);
+    canvasContext.fill();
 }
