@@ -6,6 +6,10 @@ let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
 let ballYSpeed=-3;
 
+window.onload=function(){
+    setInterval(clearCanvas,100)
+}
+
 function drawBall() {
     canvasContext.beginPath();
     canvasContext.fillStyle='#ffffff';
@@ -22,4 +26,3 @@ function clearCanvas(){
     ballYPosition=ballYPosition+ballYSpeed;
 }
 
-setInterval(clearCanvas,100)
