@@ -10,10 +10,11 @@ let paddleWidth=50;
 let paddleSize=(canvas.width-paddleWidth)/2;
 var rightKeyPressed=false
 let leftKeyPressed=false
+let gameLife=3
 
 window.onload=function(){
     document.addEventListener("keydown", keyIsPressed,false )
-    // document.addEventListener("keyup", keyIsReleased,false )
+    document.addEventListener("keyup", keyIsReleased,false )
     setInterval(clearCanvas,10)
 }
 
@@ -23,6 +24,9 @@ function drawBall() {
     canvasContext.arc(ballXPosition,ballYPosition, ballRadius, 0, 2 * Math.PI);
     canvasContext.fill();
     canvasContext.closePath();
+}
+
+function drawCanvas(){
 
     canvasContext.beginPath();
     canvasContext.fillStyle='#ffffff';
@@ -33,6 +37,7 @@ function drawBall() {
 function clearCanvas(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
+    drawCanvas();
     
     ballXPosition=ballXPosition+ballXSpeed;
     if((ballXPosition>canvas.width)||(ballXPosition<0)){
@@ -42,20 +47,47 @@ function clearCanvas(){
     ballYPosition=ballYPosition+ballYSpeed;
     if((ballYPosition>canvas.height)||(ballYPosition<0)){
         ballYSpeed=-ballYSpeed
-    }  
+        if(ballYPosition>canvas.height){
+            gameLife--
+            if(gameLife==0){
+                alert("GAME OVER")
+                document.location.reload();
+            }
+            else{
+                alert("Life left:"+ gameLife)
+            }
+         }  
+    } 
+    
+    if((rightKeyPressed) && ( paddleSize+paddleWidth <canvas.width)){
+        paddleSize =  paddleSize + 3;
+     }
+ 
+    if((leftKeyPressed) && (paddleSize >= 0)){
+        paddleSize =  paddleSize - 3;
+    }
 }
 
 function keyIsPressed(evt){
     if(evt.key=="ArrowRight"){
         rightKeyPressed=true
-        console.log(rightKeyPressed)
     }
-
+    if(evt.key=="ArrowLeft"){
+        leftKeyPressed=true
+        console.log("arrow left working")   
+    }
 }
 
-console.log(rightKeyPressed)
 
 
-
+ function keyIsReleased(evt){
+     if(evt.key=="ArrowRight"){
+         rightKeyPressed=false
+     }
+     else if(evt.key=="ArrowLeft"){
+        leftKeyPressed=false
+    }
+ }
+ 
 
 
