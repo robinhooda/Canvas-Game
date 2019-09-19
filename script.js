@@ -5,17 +5,18 @@ let ballXPosition=canvas.width/2;
 let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
 let ballYSpeed=-3;
-let paddleHeight=10;
-let paddleWidth=50;
+let paddleHeight=8;
+let paddleWidth=120;
 let paddleSize=(canvas.width-paddleWidth)/2;
 var rightKeyPressed=false
 let leftKeyPressed=false
 let gameLife=3
+var interval=""
 
 window.onload=function(){
     document.addEventListener("keydown", keyIsPressed,false )
     document.addEventListener("keyup", keyIsReleased,false )
-    setInterval(clearCanvas,10)
+    interval = setInterval(clearCanvas,10)
 }
 
 function drawBall() {
@@ -44,20 +45,21 @@ function clearCanvas(){
         ballXSpeed=-ballXSpeed
     }
 
-    ballYPosition=ballYPosition+ballYSpeed;
-    if((ballYPosition>canvas.height)||(ballYPosition<0)){
+    ballYPosition=ballYPosition+ballYSpeed
+    if(ballYPosition < 0){
         ballYSpeed=-ballYSpeed
-        if(ballYPosition>canvas.height){
+    }
+    if(ballYPosition> canvas.height){
+        if((ballXPosition > paddleSize) && (ballXPosition < paddleSize + paddleWidth)){
+            ballYSpeed = -ballYSpeed
+        }
+        else{
             gameLife--
-            if(gameLife==0){
-                alert("GAME OVER")
-                document.location.reload();
-            }
-            else{
-                alert("Life left:"+ gameLife)
-            }
-         }  
-    } 
+            alert("Game Over")   
+            document.location.reload();      
+            clearInterval(interval);      
+        }    
+    }
     
     if((rightKeyPressed) && ( paddleSize+paddleWidth <canvas.width)){
         paddleSize =  paddleSize + 3;
@@ -78,11 +80,9 @@ function keyIsPressed(evt){
     }
 }
 
-
-
  function keyIsReleased(evt){
      if(evt.key=="ArrowRight"){
-         rightKeyPressed=false
+        rightKeyPressed=false
      }
      else if(evt.key=="ArrowLeft"){
         leftKeyPressed=false
