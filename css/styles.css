@@ -18,7 +18,12 @@
     margin-bottom: 10%;
   }
   /* UTILITIES */
-  
+  #logo{
+      position: relative;
+      right: 40%;
+  }
+
+
   .container {
     background-color: #092732;
     width: 100vw;
@@ -26,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;
+    max-width: 100rem;
     margin: 0 auto;
     padding: 2rem;
   }
@@ -41,6 +46,9 @@
   }
   
   h1 {
+      position: absolute;
+      bottom: 40%;
+      left: 40%;
     font-size: 4.4rem;
     color:#FF2E8E;
     font-style: normal;
@@ -48,7 +56,17 @@
     font-family: Poppins;
     margin-bottom: 3rem;
   }
-  
+  #bounce{
+      position: absolute;
+      top: 90%;
+      right: 20%;
+  }
+
+  /* #ball{
+      position: absolute;
+      top: 90%;
+      left: 30%;
+  } */
   .flex-center {
     justify-content: center;
     align-items: center;
