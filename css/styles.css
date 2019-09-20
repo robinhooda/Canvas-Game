@@ -2,12 +2,26 @@ body{
     background-color:#092732;
 }
 .logo{
-
+    height: 400px;
+    width: auto;
 }
 .logoname{
     color:#ffff;
 }
 .ball{
     height: auto;
-    width: 100px;
+    width: 90px;
+}
+.marg{
+    margin-top: 15em;
+}
+
+.the{
+    margin-bottom: 5em;
+}
+.Bouncing{
+    font-size: 4em;
+}
+.logoname1{
+    margin-bottom: 2em;
 }
