@@ -1,32 +1,13 @@
-   body{    
-       width:100vw;
-       height: 100vh;
-       background-color: #092732;
-   }
-#logo{
-    width:16em;
-    height:25em;
-    float:left;
-    margin-left: 15em;
-    margin-top: 5em;
+body{
+    background-color:#092732;
 }
-h2{
-    color:silver;
-    float:left;
-    margin-top:10em;
+.logo{
 
 }
-h1{
-    color:white;
-    margin-top:8em;
+.logoname{
+    color:#ffff;
 }
-#logoName{
-    float:left;
-    margin-top:5em;
-    margin-left:0em;
-}
-
-#ball{
-    width:3em;
-    height:3em;
+.ball{
+    height: auto;
+    width: 100px;
 }
