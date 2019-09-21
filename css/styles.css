@@ -44,17 +44,22 @@ body{
      grid-template-rows: 4fr 1fr;
      grid-template-areas: "logo logoName ball" ;
      justify-items: center;
+     
  }
  .logo{
      text-align: center;
      width:350px;
      grid-area: logo;
+     display: inline-block;
  }
  .logoName{
      grid-area:logoName;
+     display: inline;
+     align-self: left;
  }
  .ball{
      grid-area: ball;
+     display: inline;
  }
  .startGame{
      color: blue;
