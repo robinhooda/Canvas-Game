@@ -6,7 +6,7 @@ A Bouncing Ball game where you will be breaking all the bricks by our ball witho
 
 # Authors
 [Robin Hooda](https://github.com/robinhooda), 
-[Varun](https://github.com/)
+[Varun](https://github.com/varunprabhakaran22)
 
 # Design in Figma:
 ![Initial Design](https://github.com/robinhooda/Canvas-Game/blob/master/images/homepage.png)
