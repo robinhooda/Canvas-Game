@@ -7,12 +7,15 @@
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    color: black;
-    background-color: #082631
+    color:white;
+    background-color: #082631;
   }
   .body{
     background-color: #082631;
   }  
+  #instruction{
+    color: #0175B9;
+  }
   .rules {
     font-size: 1.9em;
     margin-bottom: 10%;
@@ -81,10 +84,10 @@
   }
   
   .btn:hover {
-    cursor: pointer;
-    transform: translateY(-0.5rem);
-    transition: transform 150ms;
-  }
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  transition: transform 150ms;
+}
   
   .btn[disabled]:hover {
     cursor: not-allowed;
