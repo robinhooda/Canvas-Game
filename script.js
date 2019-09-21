@@ -4,9 +4,9 @@ let ballRadius=10;
 let ballXPosition=canvas.width/2;
 let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
-let ballYSpeed=-3;
+let ballYSpeed=-10;
 let paddleHeight=8;
-let paddleWidth=120;
+let paddleWidth=720;
 let paddleSize=(canvas.width-paddleWidth)/2;
 var rightKeyPressed=false
 let leftKeyPressed=false
@@ -19,12 +19,13 @@ let brickHeight = 20;
 let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 45;
+let score=0;
 
 let bricks = [];
 for(let column=0; column<brickColumnCount; column++) {
     bricks[column] = [];
     for(let row=0; row<brickRowCount; row++) {
-        bricks[column][row] = { x: 0, y: 0 };
+        bricks[column][row] = { x: 0, y: 0,status:1};
     }
 }
 
@@ -37,15 +38,17 @@ window.onload=function(){
 function drawBricks() {
     for(let column=0; column<brickColumnCount; column++) {
         for(let row=0; row<brickRowCount; row++) {
-            let brickX = (column*(brickWidth+brickPadding))+brickOffsetLeft;
-            let brickY = (row*(brickHeight+brickPadding))+brickOffsetTop;
-            bricks[column][row].x = brickX;
-            bricks[column][row].y = brickY;
-            canvasContext.beginPath();
-            canvasContext.fillStyle = "#0095DD";
-            canvasContext.rect(brickX, brickY, brickWidth, brickHeight);
-            canvasContext.fill();
-            canvasContext.closePath();
+            if(bricks[column][row].status==1){
+                let brickX = (column*(brickWidth+brickPadding))+brickOffsetLeft;
+                let brickY = (row*(brickHeight+brickPadding))+brickOffsetTop;
+                bricks[column][row].x = brickX;
+                bricks[column][row].y = brickY;
+                canvasContext.beginPath();
+                canvasContext.fillStyle = "#0095DD";
+                canvasContext.rect(brickX, brickY, brickWidth, brickHeight);
+                canvasContext.fill();
+                canvasContext.closePath();
+            }
         }
     }
 }
@@ -54,7 +57,7 @@ function drawBall() {
     canvasContext.beginPath();
     canvasContext.fillStyle='#ffffff';
     canvasContext.arc(ballXPosition,ballYPosition, ballRadius, 0, 2 * Math.PI);
-    canvasContext.fill();
+    canvasContext.fill();.
     canvasContext.closePath();
 }
 
@@ -65,21 +68,30 @@ function drawCanvas(){
     canvasContext.fillRect(paddleSize,canvas.height-paddleHeight,paddleWidth,paddleHeight);
     canvasContext.closePath();
 }
+
 function collisionDetection() {
     for(let column=0; column<brickColumnCount; column++) {
         for(let row=0; row<brickRowCount; row++) {
             let brickPosition = bricks[column][row];
-            if(ballXPosition > brickPosition.x && ballXPosition < brickPosition.x + brickWidth && ballYPosition > brickPosition.y && ballYPosition < brickPosition.y+brickHeight) {
-                ballYSpeed = -ballYSpeed;
+            if(brickPosition.status==1)
+            {
+                if(ballXPosition > brickPosition.x && ballXPosition < brickPosition.x + brickWidth && ballYPosition > brickPosition.y && ballYPosition < brickPosition.y+brickHeight) {
+                    ballYSpeed = -ballYSpeed;
+                    ballYSpeed+=0.5;
+                    console.log(ballYSpeed)
+                    brickPosition.status=0;
+                }
             }
         }
     }
 }
+
 function clearCanvas(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawBricks();
     drawCanvas();
+    drawScore();
     collisionDetection();
     
     ballXPosition=ballXPosition+ballXSpeed;
@@ -104,11 +116,11 @@ function clearCanvas(){
     }
     
     if((rightKeyPressed) && ( paddleSize+paddleWidth <canvas.width)){
-        paddleSize =  paddleSize + 3;
+        paddleSize =  paddleSize + 10;
      }
  
     if((leftKeyPressed) && (paddleSize >= 0)){
-        paddleSize =  paddleSize - 3;
+        paddleSize =  paddleSize - 10;
     }
 }
 
