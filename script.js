@@ -8,7 +8,7 @@ let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
 let ballYSpeed=-10;
 let paddleHeight=8;
-let paddleWidth=720;
+let paddleWidth=150;
 let paddleSize=(canvas.width-paddleWidth)/2;
 var rightKeyPressed=false
 let leftKeyPressed=false
@@ -42,7 +42,7 @@ window.onload=function(){
 // draw canvas function 
 function drawCanvas(){
     canvasContext.beginPath();
-    canvasContext.fillStyle='#ffffff';
+    canvasContext.fillStyle='#0095DD';
     canvasContext.fillRect(paddleSize,canvas.height-paddleHeight,paddleWidth,paddleHeight);
     canvasContext.closePath();
 }
@@ -133,12 +133,12 @@ function clearCanvas(){
             ballYSpeed = -ballYSpeed
         }
         // if the ball Touch the max-canvas-height setting the condition to end the game "GAME OVER"
-        else{
-            gameLife--
-            alert("Game Over")   
-            document.location.reload();      
-            clearInterval(interval);      
-        }    
+        // else{
+        //     gameLife--
+        //     alert("Game Over")   
+        //     document.location.reload();      
+        //     clearInterval(interval);      
+        // }    
     }
     // based upon the event listener the paddle will move
     if((rightKeyPressed) && ( paddleSize+paddleWidth <canvas.width)){
