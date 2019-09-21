@@ -9,9 +9,9 @@ A Bouncing Ball game where you will be breaking all the bricks by our ball witho
 [Varun](https://github.com/)
 
 # Design in Figma:
-![Initial Design](https://github.com/)
-![](https://github.com/.jpg)
-![](https://github.com/)
+![Initial Design](https://github.com/robinhooda/Canvas-Game/blob/master/images/homepage.png)
+![](https://github.com/robinhooda/Canvas-Game/blob/master/images/instructions.png)
+![](https://github.com/robinhooda/Canvas-Game/blob/master/images/gameWindow.png)
 
 ## Design in HTML,CSS :
 Next we tried to implement the design in HTML document using CSS,Bootstrap.
