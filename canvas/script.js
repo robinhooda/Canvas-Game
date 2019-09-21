@@ -8,7 +8,7 @@ let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
 let ballYSpeed=-10;
 let paddleHeight=8;
-let paddleWidth=720;
+let paddleWidth=200;
 let paddleSize=(canvas.width-paddleWidth)/2;
 var rightKeyPressed=false
 let leftKeyPressed=false
@@ -42,7 +42,7 @@ window.onload=function(){
 // draw canvas function 
 function drawCanvas(){
     canvasContext.beginPath();
-    canvasContext.fillStyle='#ffffff';
+    canvasContext.fillStyle='#0175B9';
     canvasContext.fillRect(paddleSize,canvas.height-paddleHeight,paddleWidth,paddleHeight);
     canvasContext.closePath();
 }
