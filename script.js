@@ -86,6 +86,12 @@ function collisionDetection() {
     }
 }
 
+function drawScore(){
+    canvasContext.beginPath();
+    canvasContext.fillStyle="#ffffff";
+    canvasContext.font = "16px Arial";
+    canvasContext.fillText("Score: "+score, 8, 20);
+}
 function clearCanvas(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
