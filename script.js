@@ -57,7 +57,7 @@ function drawBall() {
     canvasContext.beginPath();
     canvasContext.fillStyle='#ffffff';
     canvasContext.arc(ballXPosition,ballYPosition, ballRadius, 0, 2 * Math.PI);
-    canvasContext.fill();.
+    canvasContext.fill();
     canvasContext.closePath();
 }
 
@@ -78,7 +78,8 @@ function collisionDetection() {
                 if(ballXPosition > brickPosition.x && ballXPosition < brickPosition.x + brickWidth && ballYPosition > brickPosition.y && ballYPosition < brickPosition.y+brickHeight) {
                     ballYSpeed = -ballYSpeed;
                     ballYSpeed+=0.5;
-                    console.log(ballYSpeed)
+                    score+=2
+                    console.log(score)
                     brickPosition.status=0;
                 }
             }
@@ -91,6 +92,10 @@ function drawScore(){
     canvasContext.fillStyle="#ffffff";
     canvasContext.font = "16px Arial";
     canvasContext.fillText("Score: "+score, 8, 20);
+    if(score==80){
+        alert("won")
+        document.location.reload();
+    }
 }
 function clearCanvas(){
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
