@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color:#092732;
 }
 .logo{
@@ -17,6 +17,7 @@ body{
 }
 
 .the{
+    font-size: 3em;
     margin-bottom: 5em;
 }
 .Bouncing{
@@ -24,4 +25,26 @@ body{
 }
 .logoname1{
     margin-bottom: 2em;
+} */
+*{
+    margin:2px;
+    padding:2px;
+    box-sizing:border-box ;
 }
+body{
+    background-color:#092732;
+ }
+ h1{
+     color:whitesmoke;
+     font-size: 4em;
+ }
+ main{
+     display:grid;
+     grid-template-columns: 2fr 3fr 0.5fr;
+     grid-template-rows: 4fr 1fr;
+    margin:1fr;
+ }
+ .logo{
+     text-align: center;
+     width:350px;
+ }
