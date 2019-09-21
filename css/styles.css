@@ -42,9 +42,21 @@ body{
      display:grid;
      grid-template-columns: 2fr 3fr 0.5fr;
      grid-template-rows: 4fr 1fr;
-    margin:1fr;
+     grid-template-areas: "logo logoName ball" ;
+     justify-items: center;
  }
  .logo{
      text-align: center;
      width:350px;
+     grid-area: logo;
+ }
+ .logoName{
+     grid-area:logoName;
+ }
+ .ball{
+     grid-area: ball;
+ }
+ .startGame{
+     color: blue;
+     grid-area:btn;
  }
