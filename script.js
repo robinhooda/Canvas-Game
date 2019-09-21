@@ -87,7 +87,6 @@ function collisionDetection() {
                     ballYSpeed = -ballYSpeed;
                     ballYSpeed+=0.5;
                     score+=2
-                    console.log(score)
                     // changing the status value to zero so it will not draw the brick which already had collision
                     brickPosition.status=0;
                 }
