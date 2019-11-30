@@ -8,7 +8,10 @@ A Bouncing Ball game where you will be breaking all the bricks by our ball witho
 [Robin Hooda](https://github.com/robinhooda), 
 [Varun](https://github.com/varunprabhakaran22)
 
-# Design in Figma
+# How to Play
+Load this link in your browser : https://robinhooda.github.io/Canvas-Game/
+
+# Previews
 
 ![Initial Design](https://github.com/robinhooda/Canvas-Game/blob/master/images/homepage.png)
 ![1](https://github.com/robinhooda/Canvas-Game/blob/master/images/instructions.png)
