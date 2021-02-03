@@ -103,7 +103,7 @@ function drawScore(){
     canvasContext.fillText("Score: "+score, 8, 20);
     // if user score 80 then he won the game
     if(score==80){
-        alert("You Win")
+        alert("Congratulations! You Win")
         document.location.reload();      
         clearInterval(interval); 
         
@@ -135,7 +135,7 @@ function clearCanvas(){
         // if the ball Touch the max-canvas-height setting the condition to end the game "GAME OVER"
         else{
             gameLife--
-            alert("Game Over")   
+            alert("Opps! You lost\n Your final score is",score)   
             document.location.reload();      
             clearInterval(interval);      
         }    
