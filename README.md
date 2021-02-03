@@ -1,6 +1,5 @@
 # The Bouncing Ball
-A web application for Bouncing Ball game where you will be breaking all the bricks by our ball without letting the ball touch the ground in the game.
-
+A web application for Bouncing Ball game where you will be breaking all the bricks by our ball without letting it touch the ground.
 # Technologies 
 ## HTML5 Canvas, CSS, Bootstrap 4, ES6 Concepts.
 
