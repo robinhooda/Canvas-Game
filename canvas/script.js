@@ -5,7 +5,7 @@ let canvasContext=canvas.getContext("2d");
 let ballRadius=10;
 let ballXPosition=canvas.width/2;
 let ballYPosition= canvas.height-30;
-let ballXSpeed=1;
+let ballXSpeed=2;
 let ballYSpeed=-10;
 let paddleHeight=8;
 let paddleWidth=200;
@@ -85,7 +85,7 @@ function collisionDetection() {
             {
                 if(ballXPosition > brickPosition.x && ballXPosition < brickPosition.x + brickWidth && ballYPosition > brickPosition.y && ballYPosition < brickPosition.y+brickHeight) {
                     ballYSpeed = -ballYSpeed;
-                    ballYSpeed+=0.3;
+                    ballYSpeed+=0.5;
                     score+=2
                     // changing the status value to zero so it will not draw the brick which already had collision
                     brickPosition.status=0;
