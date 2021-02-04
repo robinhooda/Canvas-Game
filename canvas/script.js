@@ -6,7 +6,7 @@ let ballRadius=10;
 let ballXPosition=canvas.width/2;
 let ballYPosition= canvas.height-30;
 let ballXSpeed=2;
-let ballYSpeed=-10;
+let ballYSpeed=-6;
 let paddleHeight=8;
 let paddleWidth=200;
 let paddleSize=(canvas.width-paddleWidth)/2;
@@ -17,9 +17,9 @@ var interval=""
 let brickRowCount = 4;
 let brickColumnCount = 10;
 let brickWidth = 75;
-let brickHeight = 20;
+let brickHeight = 15;
 let brickPadding = 10;
-let brickOffsetTop = 30;
+let brickOffsetTop = 40;
 let brickOffsetLeft = 45;
 let score=0;
 
@@ -85,7 +85,7 @@ function collisionDetection() {
             {
                 if(ballXPosition > brickPosition.x && ballXPosition < brickPosition.x + brickWidth && ballYPosition > brickPosition.y && ballYPosition < brickPosition.y+brickHeight) {
                     ballYSpeed = -ballYSpeed;
-                    ballYSpeed+=0.5;
+                    ballYSpeed+=0.7;
                     score+=2
                     // changing the status value to zero so it will not draw the brick which already had collision
                     brickPosition.status=0;
@@ -103,7 +103,7 @@ function drawScore(){
     canvasContext.fillText("Score: "+score, 8, 20);
     // if user score 80 then he won the game
     if(score==80){
-        alert("You Win")
+        alert("Congralutions! You win.")
         document.location.reload();      
         clearInterval(interval); 
         
@@ -135,7 +135,7 @@ function clearCanvas(){
         // if the ball Touch the max-canvas-height setting the condition to end the game "GAME OVER"
         else{
             gameLife--
-            alert("Game Over")   
+            alert("Opps! You Lost. Try Again!")   
             document.location.reload();      
             clearInterval(interval);      
         }    
@@ -171,5 +171,3 @@ function keyIsReleased(evt){
     }
 }
  
-
-
